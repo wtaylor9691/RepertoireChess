@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Chessboard from 'chessboardjsx';
+import OpeningContainer from './components/containers/OpeningContainer'; 
+import CommentContainer from './components/containers/CommentContainer'; 
+import NextMoveContainer from './components/containers/NextMoveContainer'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>Repertoire Chess</h1>
+    <div className="navbar">NavBar</div>
+    <div className="front-page">
+    <div className="board">
+      <div id="opening-bar">
+      <OpeningContainer/>
+      </div>
+      <div>
+      <Chessboard position="start" width="475" />
+    </div>
+    <div id="comment-box">
+      <CommentContainer/>
+    </div>
+    </div>
+    <div className="next-move">
+      <NextMoveContainer/>
+    </div>
+    </div>
     </div>
   );
 }
